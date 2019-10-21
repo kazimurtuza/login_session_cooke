@@ -17,6 +17,16 @@ else {
     
 }
 
+/////////////user define function to filte //////////////////////
+
+function convert($info)
+{
+   return str_replace("website","www.google.com",$info);
+}
+
+$info="go to my website larn php  from website";
+
+echo filter_var($info,FILTER_CALLBACK,array("options"=>"convert"));
 
 
 
