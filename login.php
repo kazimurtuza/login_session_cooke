@@ -1,7 +1,6 @@
 <?php 
 // /////////////session sreate////////////
     session_start();
-    
 //check is session value already stay if stay then  not execute this page  diract go welcome page   ////////
 
     if( isset($_SESSION['username']) && isset($_SESSION['password']))
@@ -31,6 +30,27 @@ if(isset($_REQUEST['login']))
          
      }
 }
+    }
+
+// ////////////using filter check where from come vale ///////////
+    if(isset($_REQUEST['login']))
+    {
+      if(filter_has_var(INPUT_POST,'password')){
+        echo "<br/>."."come from post"."<br/>";
+      }
+      else {
+        echo "<br/>"."not form post";
+      }
+    }
+
+    if(isset($_REQUEST['login']))
+    {
+      if(filter_has_var(INPUT_GET,'password')){
+        echo "<br/>"."come from GET"."<br/>";
+      }
+      else {
+        echo "<br/>"."not form GET";
+      }
     }
 ?>
 
