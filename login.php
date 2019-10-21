@@ -45,7 +45,7 @@ if(isset($_REQUEST['login']))
 
     if(isset($_REQUEST['login']))
     {
-      if(filter_has_var(INPUT_GET,'password')){
+      if(filter_has_var(INPUT_GET,'username')){
         echo "<br/>"."come from GET"."<br/>";
       }
       else {
